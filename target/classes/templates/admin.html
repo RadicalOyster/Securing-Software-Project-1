@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Admin panel</title>
+    </head>
+    <body>
+
+        <h1>List of users and passwords:</h1>
+		<ul>
+			<li th:each="account : ${accounts}">
+				<span th:text="${account.username} + ', password: '"></span>
+				<span th:text="${account.password}"></span>
+			</li>
+		</ul>
+		
+		<h1>List of signups:</h1>
+		<ul>
+			<li th:each="signup : ${signups}">
+				<span th:text="${signup.name} + ', address: '"></span>
+				<span th:text="${signup.address}"></span>
+			</li>
+		</ul>
+        <p></p>
+    </body>
+</html>
